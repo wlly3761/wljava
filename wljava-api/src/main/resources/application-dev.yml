@@ -12,3 +12,5 @@ api-docs:
   title: Psag-API
   description: Psag Server
   version: v1.0.0
+logging:
+  config: classpath:logback.xml

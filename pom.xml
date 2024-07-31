@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>wljava-api</module>
+        <module>wljava-service</module>
+        <module>wljava-dao</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -22,6 +24,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springdoc.version>2.6.0</springdoc.version>
         <mybatis-spring.version>3.0.3</mybatis-spring.version>
+        <lombok.version>1.18.34</lombok.version>
+        <jackson.version>2.17.2</jackson.version>
+        <wljava-service.version>1.0-SNAPSHOT</wljava-service.version>
     </properties>
    <dependencyManagement>
        <dependencies>
@@ -34,6 +39,22 @@
                <groupId>org.mybatis</groupId>
                <artifactId>mybatis-spring</artifactId>
                <version>${mybatis-spring.version}</version>
+               <scope>compile</scope>
+           </dependency>
+           <dependency>
+               <groupId>org.projectlombok</groupId>
+               <artifactId>lombok</artifactId>
+               <version>${lombok.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.fasterxml.jackson.core</groupId>
+               <artifactId>jackson-annotations</artifactId>
+               <version>${jackson.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.wl</groupId>
+               <artifactId>wljava-service</artifactId>
+               <version>${wljava-service.version}</version>
                <scope>compile</scope>
            </dependency>
        </dependencies>

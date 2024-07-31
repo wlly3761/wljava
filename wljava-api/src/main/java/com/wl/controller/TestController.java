@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/hello")
     public String test() {
+        int a=Integer.parseInt("测试");
         return "Hello World!";
     }
 }
