@@ -15,17 +15,17 @@ import java.util.Date;
 public abstract class BaseModel implements Serializable {
     @Schema(description = "创建人ID")
     @TableField(fill = FieldFill.INSERT)
-    private Long createUserId;
-    @Schema(description = "更新人ID")
-    @TableField(fill = FieldFill.INSERT)
     private Long updateUserId;
     @Schema(description = "创建时间")
     @TableField(fill = FieldFill.INSERT)
+    private Long createUserId;
+    @Schema(description = "更新人ID")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date createDate;
     @Schema(description = "更新时间")
-    @TableField(fill = FieldFill.INSERT)
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateDate;
     @Schema(description = "版本号")
-    @TableField(fill = FieldFill.INSERT)
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Integer version;
 }

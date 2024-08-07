@@ -41,6 +41,7 @@ public class DBEntityHandler implements MetaObjectHandler {
     public void updateFill(MetaObject metaObject) {
         Date now = new Date();
         metaObject.setValue("updateDate", now);
+        metaObject.setValue("version", metaObject.getValue("version")==null?1:metaObject.getValue("version").hashCode() + 1);
         if (isLonginUser()) {
             metaObject.setValue("updateUserId", currentUserId());
         }

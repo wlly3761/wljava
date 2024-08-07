@@ -1,11 +1,10 @@
-package com.wl.controller.userInfo;
+package com.wl.controller;
 
-import com.wl.models.UserInfo;
+import com.wl.entity.UserInfo;
 import com.wl.query.UserInfoQuery;
 import com.wl.returnModel.RespInfo;
 import com.wl.service.userInfo.IUserInfoService;
 import com.wl.vo.UserInfoVO;
-import jakarta.annotation.Resource;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -56,5 +55,13 @@ public class UserInfoController {
     @PostMapping(value = "/updateUserInfo",produces = MediaType.APPLICATION_JSON_VALUE)
     public RespInfo<String> updateUserInfo(@RequestBody List<UserInfo> models) {
         return userInfoService.updateBatchUserInfo(models);
+    }
+    @PostMapping(value = "/udpateAll")
+    public RespInfo<String> udpateAll() {
+        return userInfoService.testUpdateAll();
+    }
+    @PostMapping(value = "/deleteAll")
+    public RespInfo<String> deleteAll() {
+        return userInfoService.testDeleteAll();
     }
 }

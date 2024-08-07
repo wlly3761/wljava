@@ -4,7 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wl.mapper.UserInfoMapper;
-import com.wl.models.UserInfo;
+import com.wl.entity.UserInfo;
 import com.wl.query.UserInfoQuery;
 import com.wl.returnModel.RespInfo;
 import com.wl.service.userInfo.IUserInfoService;
@@ -35,5 +35,18 @@ public class UserInfoSericeImpl extends ServiceImpl<UserInfoMapper, UserInfo> im
     public RespInfo<String> updateBatchUserInfo(List<UserInfo> userInfoList) {
            if(updateBatchById(userInfoList)) return RespInfo.ok("批量更新成功");
            else return RespInfo.error("批量更新失败");
+    }
+
+    @Override
+    public RespInfo<String> testUpdateAll() {
+         update(null);
+         return RespInfo.ok("批量更新成功");
+    }
+
+    @Override
+    public RespInfo<String> testDeleteAll() {
+        //批量删除全表数据
+        baseMapper.delete(null);
+        return RespInfo.ok("批量删除成功");
     }
 }

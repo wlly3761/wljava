@@ -10,7 +10,8 @@ api依赖service，service添加exception处理异常包，包含业务异常，
 ### 4.统一返回类RespInfo:依赖lombok支持序列化data: ###
 ### 5.统一日志记录： ###
 slf4j此依赖在spring-boot-starter包下，可以不单独包含slf4j依赖 
-### 6.引入hutool工具类： SM4国密算法###
-
+### 6.引入hutool工具类： SM4国密算法 ###
+### 7.引入mybatis-plus拦截器，分页插件、乐观锁插件、防止全表更新和删除插件 ###
+### 8.引入自动填充实体基础字段，如create_time、update_time、create_user、update_user,version字段 ###
 
 

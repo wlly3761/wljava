@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
     public RespInfo<String> allExceptionHandler(HttpServletRequest request, Exception exception) {
         logger.error("request:" + request.getRequestURI());
         logger.error("exception:", exception);
-        String message = exception.getMessage();
+        String message = exception.getCause().getMessage();
         return RespInfo.error(message);
     }
 
