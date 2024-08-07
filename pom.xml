@@ -12,6 +12,7 @@
         <module>wljava-api</module>
         <module>wljava-service</module>
         <module>wljava-dao</module>
+        <module>wljava-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,9 +29,28 @@
         <jackson.version>2.17.2</jackson.version>
         <wljava-service.version>1.0-SNAPSHOT</wljava-service.version>
         <mybatis-plus.version>3.5.7</mybatis-plus.version>
+        <hutool-all.version>5.8.29</hutool-all.version>
+        <bcpkix-jdk18on>1.78.1</bcpkix-jdk18on>
+        <druid.version>1.2.8</druid.version>
+        <mysql.version>8.0.28</mysql.version>
     </properties>
    <dependencyManagement>
        <dependencies>
+           <dependency>
+               <groupId>com.wl</groupId>
+               <artifactId>wljava-dao</artifactId>
+               <version>${project.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.wl</groupId>
+               <artifactId>wljava-service</artifactId>
+               <version>${project.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.wl</groupId>
+               <artifactId>wljava-common</artifactId>
+               <version>${project.version}</version>
+           </dependency>
            <dependency>
                <groupId>org.springdoc</groupId>
                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -61,17 +81,27 @@
            <dependency>
                <groupId>cn.hutool</groupId>
                <artifactId>hutool-all</artifactId>
-               <version>5.8.29</version>
+               <version>${hutool-all.version}</version>
            </dependency>
            <dependency>
                <groupId>org.bouncycastle</groupId>
                <artifactId>bcpkix-jdk18on</artifactId>
-               <version>1.78.1</version>
+               <version>${bcpkix-jdk18on}</version>
            </dependency>
            <dependency>
                <groupId>com.baomidou</groupId>
-               <artifactId>mybatis-plus-boot-starter</artifactId>
+               <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                <version>${mybatis-plus.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>com.alibaba</groupId>
+               <artifactId>druid</artifactId>
+               <version>${druid.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>mysql</groupId>
+               <artifactId>mysql-connector-java</artifactId>
+               <version>${mysql.version}</version>
            </dependency>
        </dependencies>
    </dependencyManagement>

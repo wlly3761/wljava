@@ -1,8 +1,8 @@
 package com.wl.handle;
 
-import com.wl.beans.RespInfo;
 import com.wl.exception.BusinessException;
 import com.wl.exception.WLException;
+import com.wl.returnModel.RespInfo;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

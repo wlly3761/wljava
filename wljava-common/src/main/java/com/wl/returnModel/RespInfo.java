@@ -1,4 +1,4 @@
-package com.wl.beans;
+package com.wl.returnModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wl.defined.Constant;

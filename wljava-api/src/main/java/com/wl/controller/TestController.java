@@ -16,15 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/hello")
     public String test() {
-        byte[] key = KeyUtil.generateKey(SM4.ALGORITHM_NAME, 128).getEncoded();
-
-        String content = "test中文";
-// 随机生成密钥
-        SM4 sm4 = SmUtil.sm4(key);
-        String encryptHex = sm4.encryptHex(content);
-        String decryptStr = sm4.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);
-//        String encryptHex = sm4.encryptHex(content);
-//        String decryptStr = sm4.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);
-        return decryptStr;
+        return "Hello World";
     }
 }

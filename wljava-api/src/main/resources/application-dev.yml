@@ -1,6 +1,6 @@
 server:
-  port: 8822
-  address: 192.168.0.3
+  port: 9900
+  address: localhost
 springdoc:
   api-docs:
     enabled: true # 开启OpenApi接口
@@ -14,3 +14,30 @@ api-docs:
   version: v1.0.0
 logging:
   config: classpath:logback.xml
+spring:
+  datasource:
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: "12345678"
+    url: "jdbc:mysql://localhost:3306/LearnJava"
+    type: com.alibaba.druid.pool.DruidDataSource
+    #druid 连接池配置项
+    initialSize: 5
+    minIdle: 5
+    maxActive: 10
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+    table-underline: false
+  global-config:
+    db-config:
+      column-underline: false

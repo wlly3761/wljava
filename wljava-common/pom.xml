@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>wljava-service</artifactId>
+    <artifactId>wljava-common</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,12 +18,20 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.wl</groupId>
-            <artifactId>wljava-common</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.wl</groupId>
-            <artifactId>wljava-dao</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk18on</artifactId>
         </dependency>
     </dependencies>
 </project>
