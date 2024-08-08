@@ -1,9 +1,10 @@
 package com.wl.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.wl.entity.UserInfo;
 import com.wl.query.UserInfoQuery;
 import com.wl.returnModel.RespInfo;
-import com.wl.service.userInfo.IUserInfoService;
+import com.wl.service.business.IUserInfoService;
 import com.wl.vo.UserInfoVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.locks.Condition;
 
 @RestController
 @RequestMapping("/userInfo")
@@ -63,5 +65,9 @@ public class UserInfoController {
     @PostMapping(value = "/deleteAll")
     public RespInfo<String> deleteAll() {
         return userInfoService.testDeleteAll();
+    }
+    @PostMapping(value = "/getUserInfoPage",produces = MediaType.APPLICATION_JSON_VALUE)
+    public RespInfo<IPage<UserInfoVO>> getUserInfoPage(@RequestBody UserInfoQuery query){
+        return userInfoService.getUserInfoPage(query);
     }
 }
