@@ -13,6 +13,7 @@
         <module>wljava-service</module>
         <module>wljava-dao</module>
         <module>wljava-common</module>
+        <module>wljava-cache</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -33,6 +34,7 @@
         <bcpkix-jdk18on>1.78.1</bcpkix-jdk18on>
         <druid.version>1.2.8</druid.version>
         <mysql.version>8.0.28</mysql.version>
+        <redis.version>3.3.2</redis.version>
     </properties>
    <dependencyManagement>
        <dependencies>
@@ -102,6 +104,11 @@
                <groupId>mysql</groupId>
                <artifactId>mysql-connector-java</artifactId>
                <version>${mysql.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-data-redis</artifactId>
+               <version>${redis.version}</version>
            </dependency>
        </dependencies>
    </dependencyManagement>
